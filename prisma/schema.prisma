@@ -10,8 +10,44 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Movie {
-  id        Int      @id @default(autoincrement())
+model User {
+  id Int @id @default(autoincrement())
+  birthday String
+  gender String
+  cellphone String @unique
+  name String
+  password String
+  avatar String
+  bio String?
+  region String
+  community Coummunity[]
   createdAt DateTime @default(now())
-  name      String?
+  updatedAt DateTime @updatedAt
+  feeds Feed[]
+  photos Photo[]
+}
+
+model Photo {
+  id Int @id @default(autoincrement())
+  feed Feed @relation(fields: [feedId], references: [id])
+  feedId Int
+  user User @relation(fields: [useId], references: [id])
+  useId Int
+}
+
+model Feed {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [useId], references: [id])
+  useId Int
+  photos Photo[]
+  caption String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Coummunity {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [useId], references: [id])
+  useId Int
+  communityName String @unique
 }
