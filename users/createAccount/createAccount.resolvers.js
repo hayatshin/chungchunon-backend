@@ -1,5 +1,4 @@
 import client from "../../client";
-import bcrypt from "bcrypt";
 import GraphQLUpload from "graphql-upload/GraphQLUpload.js";
 import { uploadToAWS } from "../../shared/shared.utils";
 
@@ -9,17 +8,7 @@ export default {
   Mutation: {
     createAccount: async (
       _,
-      {
-        birthday,
-        gender,
-        cellphone,
-        name,
-        password,
-        avatar,
-        bio,
-        region,
-        community,
-      }
+      { birthday, gender, cellphone, name, avatar, bio, region, community }
     ) => {
       try {
         // 핸드폰 번호 DB에 있는지 확인
@@ -32,15 +21,12 @@ export default {
           throw new Error("해당 번호는 이미 가입된 번호입니다.");
         }
 
-        // avatar - AWS에 업로드
+        // avatar - AWS 업로드
 
         let avatarURL = null;
         if (avatar) {
           avatarURL = await uploadToAWS(avatar, birthday, "avatar");
         }
-
-        // 비밀번호 해쉬
-        const uglyPassword = await bcrypt.hash(password, 10);
 
         // 유저 저장 및 리턴
         await client.user.create({
@@ -49,7 +35,6 @@ export default {
             gender,
             cellphone,
             name,
-            password: uglyPassword,
             avatar: avatarURL,
             bio,
             region,

@@ -13,7 +13,6 @@ export default gql`
       gender: String!
       cellphone: String!
       name: String!
-      password: String!
       avatar: Upload!
       bio: String
       region: String!

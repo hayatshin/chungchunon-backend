@@ -16,7 +16,6 @@ model User {
   gender String
   cellphone String @unique
   name String
-  password String
   avatar String
   bio String?
   region String
