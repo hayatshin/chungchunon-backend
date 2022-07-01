@@ -21,7 +21,7 @@ export default {
           throw new Error("해당 번호는 이미 가입된 번호입니다.");
         }
 
-        // avatar - AWS 업로드
+        // avatar - AWS 업로드 (ps. avatar = String)
 
         let avatarURL = null;
         if (avatar) {

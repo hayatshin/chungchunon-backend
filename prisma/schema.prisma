@@ -32,6 +32,7 @@ model Photo {
   feedId Int
   user User @relation(fields: [useId], references: [id])
   useId Int
+  photoURL String[] @unique
 }
 
 model Feed {
@@ -39,7 +40,7 @@ model Feed {
   user User @relation(fields: [useId], references: [id])
   useId Int
   photos Photo[]
-  caption String?
+  caption String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

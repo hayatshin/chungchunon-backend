@@ -9,14 +9,13 @@
 
 ## Feed :  
 
-- [ ] Create Feed (Upload Photo Array ** & Link to Photo)
-- [ ] See All Feed
-- [ ] See Certain Feed ( -> See My Feed)
+- [x] Create Feed (Upload Photo Array ** & Link to Photo)
+- [ ] See All Feeds
+- [ ] See Certain User Feed (-> See My Feed)
 - [ ] Update Feed
 - [ ] Delete Feed
 
-## Photo (x)
-
-## Community (x)
+## Photo (x) --> 필요한가?
+## Community (x) ---> 필요한가?
 
 

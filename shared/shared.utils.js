@@ -21,3 +21,10 @@ export const uploadToAWS = async (file, userId, folderName) => {
     .promise();
   return Location;
 };
+
+export const multipleUploadToAWS = async (fileArray, userId, folderName) => {
+  const uploadPromises = fileArray.map((file) =>
+    uploadToAWS(file, userId, folderName)
+  );
+  return await Promise.all(uploadPromises);
+};
