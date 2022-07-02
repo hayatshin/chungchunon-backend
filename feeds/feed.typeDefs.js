@@ -4,16 +4,9 @@ export default gql`
   type Feed {
     id: String!
     user: User!
-    photos: Photo!
+    photos: [String]
     caption: String!
     createdAt: String!
     updatedAt: String!
-  }
-
-  type Photo {
-    id: String!
-    feed: Feed!
-    user: User!
-    photoURL: [String]!
   }
 `;

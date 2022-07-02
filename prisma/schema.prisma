@@ -23,23 +23,13 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   feeds Feed[]
-  photos Photo[]
-}
-
-model Photo {
-  id Int @id @default(autoincrement())
-  feed Feed @relation(fields: [feedId], references: [id])
-  feedId Int
-  user User @relation(fields: [useId], references: [id])
-  useId Int
-  photoURL String[] @unique
 }
 
 model Feed {
   id Int @id @default(autoincrement())
   user User @relation(fields: [useId], references: [id])
   useId Int
-  photos Photo[]
+  photos String[]
   caption String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

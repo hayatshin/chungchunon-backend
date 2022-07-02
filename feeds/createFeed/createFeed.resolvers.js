@@ -19,21 +19,7 @@ export default {
                   id: loggedInUser.id,
                 },
               },
-              photos: {
-                connectOrCreate: {
-                  where: {
-                    photoURL,
-                  },
-                  create: {
-                    user: {
-                      connect: {
-                        id: loggedInUser.id,
-                      },
-                    },
-                    photoURL,
-                  },
-                },
-              },
+              photos: photoURL,
               caption,
             },
           });

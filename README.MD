@@ -10,12 +10,12 @@
 ## Feed :  
 
 - [x] Create Feed (Upload Photo Array ** & Link to Photo)
-- [ ] See All Feeds
-- [ ] See Certain User Feed (-> See My Feed)
-- [ ] Update Feed
+- [x] See All Feeds
+- [x] See Certain Feed (+ See My Feed) -> arg: id
+- [ ] Edit Feed
 - [ ] Delete Feed
 
-## Photo (x) --> 필요한가?
-## Community (x) ---> 필요한가?
+## Photo (x) --> need?
+## Community (x) ---> need?
 
 
