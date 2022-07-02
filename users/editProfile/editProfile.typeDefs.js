@@ -1,10 +1,6 @@
 import { gql } from "apollo-server";
 
 export default gql`
-  type EditProfileResult {
-    ok: Boolean!
-    error: String
-  }
   type Mutation {
     editProfile(
       birthday: String
@@ -15,6 +11,6 @@ export default gql`
       bio: String
       region: String
       community: String
-    ): EditProfileResult!
+    ): MutationResponse!
   }
 `;

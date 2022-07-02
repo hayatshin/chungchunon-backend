@@ -3,10 +3,6 @@ import { gql } from "apollo-server";
 export default gql`
   scalar Upload
 
-  type createAccountResult {
-    ok: Boolean!
-    error: String
-  }
   type Mutation {
     createAccount(
       birthday: String!
@@ -17,6 +13,6 @@ export default gql`
       bio: String
       region: String!
       community: String!
-    ): createAccountResult!
+    ): MutationResponse!
   }
 `;

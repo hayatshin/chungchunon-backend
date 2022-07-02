@@ -12,10 +12,24 @@
 - [x] Create Feed (Upload Photo Array ** & Link to Photo)
 - [x] See All Feeds
 - [x] See Certain Feed (+ See My Feed) -> arg: id
-- [ ] Edit Feed
-- [ ] Delete Feed
+- [x] Edit Feed
+- [x] Delete Feed
 
-## Photo (x) --> need?
-## Community (x) ---> need?
+# Like :
 
+- [x] Toggle Like
+- [x] See Feed Likes -> User 열람 
+- [x] See Feed Comments
+
+ps) seeAllFeeds, seeCertainFeed: Comment, Like include ??
+(-- seeProfile check)
+
+## Comment :
+- [x] Create Comment
+- [x] Edit Comment
+- [ ] Delete Comment 
+
+
+## Community 
+- See All Communities (나중에*)
 
