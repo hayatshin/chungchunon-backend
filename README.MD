@@ -27,8 +27,7 @@ ps) seeAllFeeds, seeCertainFeed: Comment, Like include ??
 ## Comment :
 - [x] Create Comment
 - [x] Edit Comment
-- [ ] Delete Comment 
-
+- [x] Delete Comment 
 
 ## Community 
 - See All Communities (나중에*)
