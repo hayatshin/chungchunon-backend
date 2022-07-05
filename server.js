@@ -9,9 +9,9 @@ require("dotenv").config();
 
 const PORT = parseInt(process.env.PORT);
 
-const accountSID = process.env.ACCOUNT_SID.replace(";", "");
-const authToken = process.env.AUTH_TOKEN.replace(";", "");
-const servcieId = process.env.SERVICE_ID.replace(";", "");
+const accountSID = process.env.ACCOUNT_SID;
+const authToken = process.env.AUTH_TOKEN;
+const servcieId = process.env.SERVICE_ID;
 
 const twillioClient = new twilio(accountSID, authToken);
 
