@@ -8,6 +8,9 @@ export default {
         orderBy: {
           createdAt: "asc",
         },
+        include: {
+          user: true,
+        },
       }),
   },
 };

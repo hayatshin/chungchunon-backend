@@ -12,26 +12,24 @@ export default {
         let photoURL = [];
         if (photos) {
           photoURL = await multipleUploadToAWS(photos, loggedInUser.id, "feed");
-          await client.feed.create({
-            data: {
-              user: {
-                connect: {
-                  id: loggedInUser.id,
-                },
-              },
-              photos: photoURL,
-              caption,
-            },
-          });
         }
-        return {
-          ok: true,
-        };
+        return client.feed.create({
+          data: {
+            user: {
+              connect: {
+                id: loggedInUser.id,
+              },
+            },
+            ...(photos && { photos: photoURL }),
+            caption,
+          },
+          include: {
+            user: true,
+            comments: true,
+          },
+        });
       } catch (e) {
-        return {
-          ok: false,
-          error: `피드를 생성할 수 없습니다. ${e}`,
-        };
+        console.log(e);
       }
     },
   },
