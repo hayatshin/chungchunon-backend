@@ -4,6 +4,6 @@ export default gql`
   scalar Upload
 
   type Mutation {
-    editFeed(id: Int!, photos: [Upload], caption: String): MutationResponse!
+    editFeed(id: Int!, caption: String!): MutationResponse!
   }
 `;

@@ -3,12 +3,10 @@ import { protectedResolver } from "../../users/users.utils";
 
 export default {
   Query: {
-    seeCertainFeed: protectedResolver((_, { userName }) =>
-      client.feed.findMany({
+    seeCertainFeed: protectedResolver((_, { id }) =>
+      client.feed.findUnique({
         where: {
-          user: {
-            name: userName,
-          },
+          id,
         },
         include: {
           user: true,

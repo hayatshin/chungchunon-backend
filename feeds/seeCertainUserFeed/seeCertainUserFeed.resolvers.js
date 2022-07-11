@@ -3,17 +3,17 @@ import { protectedResolver } from "../../users/users.utils";
 
 export default {
   Query: {
-    seeAllFeeds: protectedResolver((_, { offset }, { loggedInUser }) =>
+    seeCertainUserFeed: protectedResolver((_, { userName }) =>
       client.feed.findMany({
-        orderBy: [
-          {
-            id: "asc",
+        where: {
+          user: {
+            name: userName,
           },
-        ],
-        take: 2,
-        skip: offset,
+        },
         include: {
           user: true,
+          likes: true,
+          comments: true,
         },
       })
     ),
