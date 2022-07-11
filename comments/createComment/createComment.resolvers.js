@@ -19,7 +19,7 @@ export default {
             error: "게시글을 찾을 수 없습니다.",
           };
         }
-        const newComment = await client.comment.create({
+        return client.comment.create({
           data: {
             payload,
             feed: {
@@ -33,10 +33,11 @@ export default {
               },
             },
           },
+          include: {
+            user: true,
+            feed: true,
+          },
         });
-        return {
-          ok: true,
-        };
       }
     ),
   },

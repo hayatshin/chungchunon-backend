@@ -6,7 +6,7 @@ export default {
       client.comment.findMany({
         where: { feedId: id },
         orderBy: {
-          createdAt: "asc",
+          id: "desc",
         },
         include: {
           user: true,

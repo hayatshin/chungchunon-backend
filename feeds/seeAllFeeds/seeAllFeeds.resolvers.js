@@ -7,7 +7,7 @@ export default {
       client.feed.findMany({
         orderBy: [
           {
-            id: "asc",
+            id: "desc",
           },
         ],
         take: 2,
