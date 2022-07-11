@@ -10,16 +10,6 @@ export default {
       _,
       { birthday, gender, cellphone, name, avatar, bio, region, community }
     ) => {
-      console.log(
-        birthday,
-        gender,
-        cellphone,
-        name,
-        avatar,
-        bio,
-        region,
-        community
-      );
       try {
         // 핸드폰 번호 DB에 있는지 확인
         const existingUser = await client.user.findFirst({

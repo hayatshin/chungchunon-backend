@@ -19,7 +19,8 @@ model User {
   avatar String?
   bio String?
   region String
-  community Coummunity[]
+  community Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  communityId Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   feeds Feed[]
@@ -62,9 +63,8 @@ model Comment {
   updatedAt DateTime @updatedAt
 }
 
-model Coummunity {
+model Community {
   id Int @id @default(autoincrement())
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId Int
+  user User[] 
   communityName String @unique
 }
