@@ -19,6 +19,7 @@ export default gql`
   type Like {
     id: Int!
     feed: Feed!
+    user: User!
     createdAt: String!
     updatedAt: String!
   }

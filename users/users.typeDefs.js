@@ -10,9 +10,9 @@ export default gql`
     avatar: String!
     bio: String
     region: String!
-    community: String!
     createdAt: String!
     updatedAt: String!
+    community: Community!
     # direct
     directLikeNumber: Int!
     directCommentNumber: Int!
