@@ -67,4 +67,5 @@ model Community {
   id Int @id @default(autoincrement())
   user User[] 
   communityName String @unique
+  communityLogo String
 }

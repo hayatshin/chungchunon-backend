@@ -39,13 +39,8 @@ export default {
             bio,
             region,
             community: {
-              connectOrCreate: {
-                where: {
-                  communityName: community,
-                },
-                create: {
-                  communityName: community,
-                },
+              connect: {
+                communityName: community,
               },
             },
           },

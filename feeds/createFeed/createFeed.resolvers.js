@@ -7,6 +7,7 @@ export default {
 
   Mutation: {
     createFeed: async (_, { photos, caption }, { loggedInUser }) => {
+      console.log(loggedInUser.id);
       try {
         // photos - AWS 업로드 (ps. photos = multiple String)
         let photoURL = [];

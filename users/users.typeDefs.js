@@ -13,5 +13,9 @@ export default gql`
     community: String!
     createdAt: String!
     updatedAt: String!
+    # direct
+    directLikeNumber: Int!
+    directCommentNumber: Int!
+    directFeedNumber: Int!
   }
 `;
