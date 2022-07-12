@@ -5,11 +5,11 @@ import moment from "moment";
 export default {
   Query: {
     seeCommunityLikeOrder: protectedResolver((_, { id }) => {
-      const startOfMonth = new Date(
-        moment().startOf("month").format("YYYY-MM-DD hh:mm").substring(0, 10)
+      const startOfWeek = new Date(
+        moment().startOf("week").format("YYYY-MM-DD hh:mm").substring(0, 10)
       );
-      const endOfMonth = new Date(
-        moment().endOf("month").format("YYYY-MM-DD hh:mm").substring(0, 10)
+      const endOfWeek = new Date(
+        moment().endOf("week").format("YYYY-MM-DD hh:mm").substring(0, 10)
       );
       return client.user.findMany({
         where: {
@@ -18,8 +18,8 @@ export default {
               likes: {
                 some: {
                   createdAt: {
-                    gte: startOfMonth,
-                    lt: endOfMonth,
+                    gte: startOfWeek,
+                    lt: endOfWeek,
                   },
                 },
               },
