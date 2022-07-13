@@ -26,6 +26,8 @@ model User {
   feeds Feed[]
   likes Like[]
   comments Comment[]
+  age Int
+  poems Poem[]
 }
 
 model Feed {
@@ -68,4 +70,14 @@ model Community {
   user User[] 
   communityName String @unique
   communityLogo String
+}
+
+model Poem {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+  poemTitle String
+  poemCaption String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

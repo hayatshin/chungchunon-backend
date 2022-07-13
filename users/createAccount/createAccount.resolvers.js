@@ -8,7 +8,7 @@ export default {
   Mutation: {
     createAccount: async (
       _,
-      { birthday, gender, cellphone, name, avatar, bio, region, community }
+      { birthday, gender, cellphone, name, avatar, bio, region, community, age }
     ) => {
       try {
         // 핸드폰 번호 DB에 있는지 확인
@@ -43,6 +43,7 @@ export default {
                 communityName: community,
               },
             },
+            age,
           },
         });
         return {

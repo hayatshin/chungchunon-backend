@@ -13,7 +13,7 @@ export default {
       );
       return client.user.findMany({
         where: {
-          likes: {
+          comments: {
             some: {
               createdAt: {
                 gte: startOfWeek,

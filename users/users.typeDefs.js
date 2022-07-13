@@ -17,5 +17,7 @@ export default gql`
     directLikeNumber: Int!
     directCommentNumber: Int!
     directFeedNumber: Int!
+    #
+    age: Int!
   }
 `;

@@ -16,7 +16,7 @@ export default {
         where: {
           AND: [
             {
-              likes: {
+              feeds: {
                 some: {
                   createdAt: {
                     gte: startOfWeek,

@@ -13,6 +13,7 @@ export default gql`
       bio: String
       region: String!
       community: String!
+      age: Int!
     ): MutationResponse!
   }
 `;
