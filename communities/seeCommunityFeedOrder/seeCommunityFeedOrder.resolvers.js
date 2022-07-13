@@ -37,7 +37,6 @@ export default {
             _count: "desc",
           },
         },
-        take: 10,
       });
     }),
   },

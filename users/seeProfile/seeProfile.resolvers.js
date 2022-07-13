@@ -7,6 +7,9 @@ export default {
         where: {
           id,
         },
+        include: {
+          community: true,
+        },
       }),
   },
 };
