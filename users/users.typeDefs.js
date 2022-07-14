@@ -17,6 +17,7 @@ export default gql`
     directLikeNumber: Int!
     directCommentNumber: Int!
     directFeedNumber: Int!
+    directPoemNumber: Int!
     #
     age: Int!
   }

@@ -28,6 +28,8 @@ model User {
   comments Comment[]
   age Int
   poems Poem[]
+  poemLikes Poemlike[]
+  poemComments Poemcomment[]
 }
 
 model Feed {
@@ -78,6 +80,31 @@ model Poem {
   userId Int
   poemTitle String
   poemCaption String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  poemLikes Poemlike[]
+  poemComments Poemcomment[]
+}
+
+model Poemlike {
+  id Int @id @default(autoincrement())
+  poem Poem @relation(fields: [poemId], references: [id], onDelete: Cascade)
+  poemId Int
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([poemId, userId])
+}
+
+model Poemcomment {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+  poem Poem @relation(fields: [poemId], references: [id], onDelete: Cascade)
+  poemId Int
+  payload String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

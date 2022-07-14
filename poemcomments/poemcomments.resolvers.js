@@ -1,5 +1,5 @@
 export default {
-  Comment: {
+  Poemcomment: {
     isMine: ({ userId }, _, { loggedInUser }) => {
       if (!loggedInUser) {
         return false;

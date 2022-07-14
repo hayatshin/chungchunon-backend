@@ -8,5 +8,19 @@ export default gql`
     poemCaption: String!
     createdAt: String!
     updatedAt: String!
+    # feeds.resolvers - 직접 관계 맺기
+    poemLikeNumber: Int!
+    poemComments: [Comment]
+    poemCommentNumber: Int!
+    isMine: Boolean!
+    isLiked: Boolean!
+  }
+
+  type Poemlike {
+    id: Int!
+    poem: Poem!
+    user: User!
+    createdAt: String!
+    updatedAt: String!
   }
 `;
