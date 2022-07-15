@@ -27,7 +27,11 @@ export default {
             ...(avatarURL && { avatar: avatarURL }),
             bio,
             region,
-            community,
+            community: {
+              connect: {
+                communityName: community,
+              },
+            },
           },
         });
         if (ok) {

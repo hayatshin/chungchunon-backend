@@ -10,7 +10,7 @@ export default gql`
     updatedAt: String!
     # feeds.resolvers - 직접 관계 맺기
     poemLikeNumber: Int!
-    poemComments: [Comment]
+    poemComments: [Poemcomment]
     poemCommentNumber: Int!
     isMine: Boolean!
     isLiked: Boolean!
