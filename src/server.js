@@ -21,7 +21,6 @@ async function startServer() {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    cache: new InMemoryLRUCache(),
     playground: true,
     introspection: true,
     context: async ({ req }) => {
