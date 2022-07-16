@@ -20,6 +20,8 @@ async function startServer() {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+
+    // 실제 production에서는 지울 것!
     playground: true,
     introspection: true,
     plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
