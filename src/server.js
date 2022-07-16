@@ -13,7 +13,7 @@ const accountSID = process.env.ACCOUNT_SID;
 const authToken = process.env.AUTH_TOKEN;
 const servcieId = process.env.SERVICE_ID;
 
-const twillioClient = new twilio(accountSID, authToken);
+// const twillioClient = new twilio(accountSID, authToken);
 
 async function startServer() {
   const server = new ApolloServer({
@@ -31,36 +31,36 @@ async function startServer() {
   app.use(logger("tiny"));
   app.use(graphqlUploadExpress());
 
-  app.get("/verify/:to", async (req, res) => {
-    const to = `+82${req.params.to.replaceAll("-", "").substring(1, 11)}`;
+  // app.get("/verify/:to", async (req, res) => {
+  //   const to = `+82${req.params.to.replaceAll("-", "").substring(1, 11)}`;
 
-    twillioClient.verify
-      .services(servcieId)
-      .verifications.create({
-        to,
-        channel: "sms",
-      })
-      .then((verification) => {
-        res.json(verification);
-      })
-      .catch((err) => {
-        res.json(err);
-      });
-  });
+  //   twillioClient.verify
+  //     .services(servcieId)
+  //     .verifications.create({
+  //       to,
+  //       channel: "sms",
+  //     })
+  //     .then((verification) => {
+  //       res.json(verification);
+  //     })
+  //     .catch((err) => {
+  //       res.json(err);
+  //     });
+  // });
 
-  app.get("/check/:to/:code", async (req, res) => {
-    const to = `+82${req.params.to.replaceAll("-", "").substring(1, 11)}`;
-    const code = req.params.code;
-    twillioClient.verify
-      .services(servcieId)
-      .verificationChecks.create({ to, code })
-      .then((verification) => {
-        res.json(verification);
-      })
-      .catch((err) => {
-        res.json(err);
-      });
-  });
+  // app.get("/check/:to/:code", async (req, res) => {
+  //   const to = `+82${req.params.to.replaceAll("-", "").substring(1, 11)}`;
+  //   const code = req.params.code;
+  //   twillioClient.verify
+  //     .services(servcieId)
+  //     .verificationChecks.create({ to, code })
+  //     .then((verification) => {
+  //       res.json(verification);
+  //     })
+  //     .catch((err) => {
+  //       res.json(err);
+  //     });
+  // });
 
   server.applyMiddleware({ app });
   await new Promise((r) => app.listen({ port: PORT }, r));
