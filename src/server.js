@@ -22,8 +22,8 @@ async function startServer() {
     resolvers,
 
     // 실제 production에서는 지울 것!
-    playground: true,
-    introspection: true,
+    // playground: true,
+    // introspection: true,
     plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
     context: async ({ req }) => {
       return {
