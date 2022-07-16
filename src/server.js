@@ -5,8 +5,7 @@ import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers } from "./schema";
 import { getUser } from "./users/users.utils";
 import twilio from "twilio";
-import { InMemoryLRUCache } from "@apollo/utils.keyvaluecache";
-
+import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 require("dotenv").config();
 
 const PORT = parseInt(process.env.PORT);
@@ -23,6 +22,7 @@ async function startServer() {
     resolvers,
     playground: true,
     introspection: true,
+    plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
     context: async ({ req }) => {
       return {
         loggedInUser: await getUser(req.headers.token),
