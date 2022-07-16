@@ -5,6 +5,8 @@ import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers } from "./schema";
 import { getUser } from "./users/users.utils";
 import twilio from "twilio";
+import { InMemoryLRUCache } from "@apollo/utils.keyvaluecache";
+
 require("dotenv").config();
 
 const PORT = parseInt(process.env.PORT);
@@ -19,6 +21,7 @@ async function startServer() {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    cache: new InMemoryLRUCache(),
     playground: true,
     introspection: true,
     context: async ({ req }) => {
