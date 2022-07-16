@@ -70,8 +70,6 @@ async function startServer() {
   server.applyMiddleware({ app });
   await new Promise((r) => app.listen({ port: PORT }, r));
 
-  console.log(
-    `🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`
-  );
+  console.log(`🚀 Server ready at http://localhost:${PORT}`);
 }
 startServer();
