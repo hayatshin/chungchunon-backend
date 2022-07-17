@@ -3,7 +3,7 @@ import { protectedResolver } from "../../users/users.utils";
 
 export default {
   Query: {
-    seeAllFeeds: protectedResolver((_, { offset }, { loggedInUser }) =>
+    seeAllFeeds: (_, { offset }, { loggedInUser }) =>
       client.feed.findMany({
         orderBy: [
           {
@@ -15,7 +15,6 @@ export default {
         include: {
           user: true,
         },
-      })
-    ),
+      }),
   },
 };
