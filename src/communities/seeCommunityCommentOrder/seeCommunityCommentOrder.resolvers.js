@@ -2,15 +2,20 @@ import client from "../../client";
 import { protectedResolver } from "../../users/users.utils";
 import moment from "moment";
 
+// const lastweekStart = new Date(
+//   moment().subtract(1, "weeks").startOf("week").format("YYYY-MM-DD")
+// );
+// const lastweekEnd = new Date(
+//   moment().subtract(1, "weeks").endOf("week").format("YYYY-MM-DD")
+// );
+
 export default {
   Query: {
     seeCommunityCommentOrder: protectedResolver((_, { id }) => {
-      const startOfWeek = new Date(
-        moment().startOf("week").format("YYYY-MM-DD hh:mm").substring(0, 10)
+      const thisweekStart = new Date(
+        moment().startOf("week").format("YYYY-MM-DD")
       );
-      const endOfWeek = new Date(
-        moment().endOf("week").format("YYYY-MM-DD hh:mm").substring(0, 10)
-      );
+      const today = moment().format("YYYY-MM-DD");
 
       return client.user.findMany({
         where: {
@@ -19,8 +24,8 @@ export default {
               comments: {
                 some: {
                   createdAt: {
-                    gte: startOfWeek,
-                    lt: endOfWeek,
+                    gte: thisweekStart,
+                    lt: today,
                   },
                 },
               },

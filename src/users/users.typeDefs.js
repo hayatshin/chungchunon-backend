@@ -13,11 +13,16 @@ export default gql`
     createdAt: String!
     updatedAt: String!
     community: Community!
-    # direct
-    directLikeNumber: Int!
-    directCommentNumber: Int!
-    directFeedNumber: Int!
-    directPoemNumber: Int!
+    # thisweek
+    thisweekLikeNumber: Int!
+    thisweekCommentNumber: Int!
+    thisweekFeedNumber: Int!
+    thisweekPoemNumber: Int!
+    # thisweek
+    lastweekLikeNumber: Int!
+    lastweekCommentNumber: Int!
+    lastweekFeedNumber: Int!
+    lastweekPoemNumber: Int!
     #
     age: Int!
   }
