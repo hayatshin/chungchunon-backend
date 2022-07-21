@@ -3,12 +3,14 @@ import moment from "moment";
 
 const lastweekStart = new Date(
   moment().subtract(1, "weeks").startOf("week").format("YYYY-MM-DD")
-);
+).setHours(0, 0, 0, 0);
 const lastweekEnd = new Date(
   moment().subtract(1, "weeks").endOf("week").format("YYYY-MM-DD")
-);
-const thisweekStart = new Date(moment().startOf("week").format("YYYY-MM-DD"));
-const today = new Date(moment().format("YYYY-MM-DD"));
+).setHours(24, 0, 0, 0);
+const thisweekStart = new Date(
+  moment().startOf("week").format("YYYY-MM-DD")
+).setHours(0, 0, 0, 0);
+const today = new Date(moment().format("YYYY-MM-DD")).setHours(24, 0, 0, 0);
 
 export default {
   User: {
