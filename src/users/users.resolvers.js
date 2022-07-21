@@ -8,7 +8,7 @@ const lastweekEnd = new Date(
   moment().subtract(1, "weeks").endOf("week").endOf("day")
 );
 const thisweekStart = new Date(moment().startOf("week").startOf("day"));
-const today = moment().endOf("day");
+const today = new Date(moment().endOf("day"));
 
 export default {
   User: {
