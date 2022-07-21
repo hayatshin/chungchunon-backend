@@ -2,13 +2,13 @@ import client from "../client";
 import moment from "moment";
 
 const lastweekStart = new Date(
-  moment().subtract(1, "weeks").startOf("week").format("YYYY-MM-DD")
+  moment().subtract(1, "weeks").startOf("week").startOf("day")
 );
 const lastweekEnd = new Date(
-  moment().subtract(1, "weeks").endOf("week").format("YYYY-MM-DD")
+  moment().subtract(1, "weeks").endOf("week").endOf("day")
 );
-const thisweekStart = new Date(moment().startOf("week").format("YYYY-MM-DD"));
-const today = new Date(moment().format("YYYY-MM-DD"));
+const thisweekStart = new Date(moment().startOf("week").startOf("day"));
+const today = moment().endOf("day");
 
 export default {
   User: {
