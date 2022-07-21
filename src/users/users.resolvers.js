@@ -15,20 +15,32 @@ export default {
     thisweekLikeNumber: async ({ id }) => {
       const feedLikeNumber = await client.like.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: thisweekStart,
-            lt: today,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: thisweekStart,
+                lt: today,
+              },
+            },
+          ],
         },
       });
       const poemLikeNumber = await client.poemlike.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: thisweekStart,
-            lt: today,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: thisweekStart,
+                lt: today,
+              },
+            },
+          ],
         },
       });
       return parseInt(feedLikeNumber) + parseInt(poemLikeNumber);
@@ -36,20 +48,32 @@ export default {
     thisweekCommentNumber: async ({ id }) => {
       const feedCommentNumber = await client.comment.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: thisweekStart,
-            lt: today,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: thisweekStart,
+                lt: today,
+              },
+            },
+          ],
         },
       });
       const poemCommentNumber = await client.poemcomment.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: thisweekStart,
-            lt: today,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: thisweekStart,
+                lt: today,
+              },
+            },
+          ],
         },
       });
       return parseInt(feedCommentNumber) + parseInt(poemCommentNumber);
@@ -57,40 +81,64 @@ export default {
     thisweekFeedNumber: ({ id }) =>
       client.feed.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: thisweekStart,
-            lt: today,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: thisweekStart,
+                lt: today,
+              },
+            },
+          ],
         },
       }),
     thisweekPoemNumber: ({ id }) =>
       client.poem.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: thisweekStart,
-            lt: today,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: thisweekStart,
+                lt: today,
+              },
+            },
+          ],
         },
       }),
     lastweekLikeNumber: async ({ id }) => {
       const feedLikeNumber = await client.like.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: lastweekStart,
-            lt: lastweekEnd,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: lastweekStart,
+                lt: lastweekEnd,
+              },
+            },
+          ],
         },
       });
       const poemLikeNumber = await client.poemlike.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: lastweekStart,
-            lt: lastweekEnd,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: lastweekStart,
+                lt: lastweekEnd,
+              },
+            },
+          ],
         },
       });
       return parseInt(feedLikeNumber) + parseInt(poemLikeNumber);
@@ -98,20 +146,32 @@ export default {
     lastweekCommentNumber: async ({ id }) => {
       const feedCommentNumber = await client.comment.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: lastweekStart,
-            lt: lastweekEnd,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: lastweekStart,
+                lt: lastweekEnd,
+              },
+            },
+          ],
         },
       });
       const poemCommentNumber = await client.poemcomment.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: lastweekStart,
-            lt: lastweekEnd,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: lastweekStart,
+                lt: lastweekEnd,
+              },
+            },
+          ],
         },
       });
       return parseInt(feedCommentNumber) + parseInt(poemCommentNumber);
@@ -119,21 +179,33 @@ export default {
     lastweekFeedNumber: ({ id }) =>
       client.feed.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: lastweekStart,
-            lt: lastweekEnd,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: lastweekStart,
+                lt: lastweekEnd,
+              },
+            },
+          ],
         },
       }),
     lastweekPoemNumber: ({ id }) =>
       client.poem.count({
         where: {
-          userId: id,
-          createdAt: {
-            gte: lastweekStart,
-            lt: lastweekEnd,
-          },
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: lastweekStart,
+                lt: lastweekEnd,
+              },
+            },
+          ],
         },
       }),
   },
