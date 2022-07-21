@@ -3,14 +3,12 @@ import moment from "moment";
 
 const lastweekStart = new Date(
   moment().subtract(1, "weeks").startOf("week").format("YYYY-MM-DD")
-).setHours(0, 0, 0, 0);
+);
 const lastweekEnd = new Date(
   moment().subtract(1, "weeks").endOf("week").format("YYYY-MM-DD")
-).setHours(24, 0, 0, 0);
-const thisweekStart = new Date(
-  moment().startOf("week").format("YYYY-MM-DD")
-).setHours(0, 0, 0, 0);
-const today = new Date(moment().format("YYYY-MM-DD")).setHours(24, 0, 0, 0);
+);
+const thisweekStart = new Date(moment().startOf("week").format("YYYY-MM-DD"));
+const today = new Date(moment().format("YYYY-MM-DD"));
 
 export default {
   User: {
@@ -24,7 +22,7 @@ export default {
             {
               createdAt: {
                 gte: thisweekStart,
-                lt: today,
+                lte: today,
               },
             },
           ],
@@ -39,7 +37,7 @@ export default {
             {
               createdAt: {
                 gte: thisweekStart,
-                lt: today,
+                lte: today,
               },
             },
           ],
@@ -57,7 +55,7 @@ export default {
             {
               createdAt: {
                 gte: thisweekStart,
-                lt: today,
+                lte: today,
               },
             },
           ],
@@ -72,7 +70,7 @@ export default {
             {
               createdAt: {
                 gte: thisweekStart,
-                lt: today,
+                lte: today,
               },
             },
           ],
@@ -90,7 +88,7 @@ export default {
             {
               createdAt: {
                 gte: thisweekStart,
-                lt: today,
+                lte: today,
               },
             },
           ],
@@ -106,7 +104,7 @@ export default {
             {
               createdAt: {
                 gte: thisweekStart,
-                lt: today,
+                lte: today,
               },
             },
           ],
@@ -122,7 +120,7 @@ export default {
             {
               createdAt: {
                 gte: lastweekStart,
-                lt: lastweekEnd,
+                lte: lastweekEnd,
               },
             },
           ],
@@ -137,7 +135,7 @@ export default {
             {
               createdAt: {
                 gte: lastweekStart,
-                lt: lastweekEnd,
+                lte: lastweekEnd,
               },
             },
           ],
@@ -155,7 +153,7 @@ export default {
             {
               createdAt: {
                 gte: lastweekStart,
-                lt: lastweekEnd,
+                lte: lastweekEnd,
               },
             },
           ],
@@ -170,7 +168,7 @@ export default {
             {
               createdAt: {
                 gte: lastweekStart,
-                lt: lastweekEnd,
+                lte: lastweekEnd,
               },
             },
           ],
@@ -188,7 +186,7 @@ export default {
             {
               createdAt: {
                 gte: lastweekStart,
-                lt: lastweekEnd,
+                lte: lastweekEnd,
               },
             },
           ],
@@ -204,7 +202,7 @@ export default {
             {
               createdAt: {
                 gte: lastweekStart,
-                lt: lastweekEnd,
+                lte: lastweekEnd,
               },
             },
           ],
