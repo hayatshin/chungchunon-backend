@@ -3,7 +3,7 @@ import { protectedResolver } from "../../users/users.utils";
 
 export default {
   Query: {
-    seeMeFeedpoem: protectedResolver(
+    seeMeFeedPoem: protectedResolver(
       async (_, { offset }, { loggedInUser }) => {
         const [feeds, poems] = await Promise.all([
           client.feed.findMany({
