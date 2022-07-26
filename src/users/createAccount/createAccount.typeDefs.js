@@ -13,6 +13,9 @@ export default gql`
       avatar: Upload
       age: String!
       kakaoId: String!
+      bio: String!
+      region: String!
+      community: String!
     ): MutationResponse!
   }
 `;
