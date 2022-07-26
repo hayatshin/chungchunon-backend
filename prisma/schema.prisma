@@ -20,6 +20,7 @@ model Admin {
 
 model User {
   id Int @id @default(autoincrement())
+  kakaoId Int
   birthday String
   gender String
   cellphone String @unique

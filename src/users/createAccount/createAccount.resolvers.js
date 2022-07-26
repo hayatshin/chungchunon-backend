@@ -8,7 +8,18 @@ export default {
   Mutation: {
     createAccount: async (
       _,
-      { birthday, gender, cellphone, name, avatar, bio, region, community, age }
+      {
+        birthday,
+        gender,
+        cellphone,
+        name,
+        avatar,
+        bio,
+        region,
+        community,
+        age,
+        kakaoId,
+      }
     ) => {
       try {
         // 핸드폰 번호 DB에 있는지 확인
@@ -31,6 +42,7 @@ export default {
         // 유저 저장 및 리턴
         await client.user.create({
           data: {
+            kakaoId,
             birthday,
             gender,
             cellphone,

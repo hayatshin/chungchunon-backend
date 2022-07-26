@@ -3,8 +3,8 @@ import client from "../../client";
 
 export default {
   Mutation: {
-    login: async (_, { cellphone }) => {
-      const user = await client.user.findUnique({ where: { cellphone } });
+    login: async (_, { kakaoId }) => {
+      const user = await client.user.findUnique({ where: { kakaoId } });
       if (!user) {
         return {
           ok: false,
