@@ -7,6 +7,6 @@ export default gql`
     error: String
   }
   type Mutation {
-    login(kakaoId: Int!): LoginResult!
+    login(kakaoId: String!): LoginResult!
   }
 `;
