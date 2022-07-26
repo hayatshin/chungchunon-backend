@@ -20,7 +20,7 @@ model Admin {
 
 model User {
   id Int @id @default(autoincrement())
-  kakaoId Int?
+  kakaoId Int
   birthyear String
   birthday String
   gender String
