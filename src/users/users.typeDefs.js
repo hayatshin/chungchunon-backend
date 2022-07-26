@@ -3,16 +3,18 @@ import { gql } from "apollo-server";
 export default gql`
   type User {
     id: String!
+    kakaoId: String!
+    birthyear: String!
     birthday: String!
     gender: String!
     cellphone: String!
     name: String!
-    avatar: String!
+    avatar: String
     bio: String
-    region: String!
+    region: String
     createdAt: String!
     updatedAt: String!
-    community: Community!
+    community: Community
     # thisweek
     thisweekLikeNumber: Int!
     thisweekCommentNumber: Int!
@@ -24,6 +26,6 @@ export default gql`
     lastweekFeedNumber: Int!
     lastweekPoemNumber: Int!
     #
-    age: Int!
+    age: String!
   }
 `;
