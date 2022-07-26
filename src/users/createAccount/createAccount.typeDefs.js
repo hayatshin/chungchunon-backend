@@ -5,7 +5,7 @@ export default gql`
 
   type Mutation {
     createAccount(
-      birthYear: String!
+      birthyear: String!
       birthday: String!
       gender: String!
       cellphone: String!
