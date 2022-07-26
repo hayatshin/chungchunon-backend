@@ -6,16 +6,21 @@ export const getUser = async (token) => {
     if (!token) {
       return null;
     }
-    const { id } = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await client.user.findUnique({
-      where: {
-        id,
-      },
-    });
-    if (user) {
+    const { id, type } = jwt.verify(token, process.env.JWT_SECRET);
+    if (type === "user") {
+      const user = await client.user.findUnique({
+        where: {
+          id,
+        },
+      });
       return user;
-    } else {
-      return null;
+    } else if (type === "admin") {
+      const user = await client.user.findUnique({
+        where: {
+          id,
+        },
+      });
+      return user;
     }
   } catch (e) {
     return null;

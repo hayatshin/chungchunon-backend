@@ -12,7 +12,10 @@ export default {
         };
       }
       // token 발행
-      const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
+      const token = jwt.sign(
+        { id: user.id, type: "user" },
+        process.env.JWT_SECRET
+      );
       return {
         ok: true,
         token,
