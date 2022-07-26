@@ -15,9 +15,6 @@ export default {
         cellphone,
         name,
         avatar,
-        bio,
-        region,
-        community,
         age,
         kakaoId,
       }
@@ -50,12 +47,12 @@ export default {
             cellphone,
             name,
             avatar: avatarURL,
-            bio,
-            region,
-            community: {
-              connect: {
-                communityName: community,
-              },
+            // bio,
+            // region,
+            // community: {
+            //   connect: {
+            //     communityName: community,
+            //   },
             },
             age,
           },

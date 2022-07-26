@@ -11,9 +11,6 @@ export default gql`
       cellphone: String!
       name: String!
       avatar: Upload
-      bio: String
-      region: String!
-      community: String!
       age: String!
       kakaoId: String!
     ): MutationResponse!

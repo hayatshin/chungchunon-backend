@@ -28,9 +28,9 @@ model User {
   name String
   avatar String?
   bio String?
-  region String
-  community Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
-  communityId Int
+  region String?
+  community Community? @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  communityId Int?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   feeds Feed[]
