@@ -21,6 +21,7 @@ model Admin {
 model User {
   id Int @id @default(autoincrement())
   kakaoId Int
+  birthyear String
   birthday String
   gender String
   cellphone String @unique
@@ -35,7 +36,7 @@ model User {
   feeds Feed[]
   likes Like[]
   comments Comment[]
-  age Int
+  age String
   poems Poem[]
   poemLikes Poemlike[]
   poemComments Poemcomment[]

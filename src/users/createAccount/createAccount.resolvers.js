@@ -9,6 +9,7 @@ export default {
     createAccount: async (
       _,
       {
+        birthyear,
         birthday,
         gender,
         cellphone,
@@ -43,6 +44,7 @@ export default {
         await client.user.create({
           data: {
             kakaoId,
+            birthyear,
             birthday,
             gender,
             cellphone,

@@ -5,6 +5,7 @@ export default gql`
 
   type Mutation {
     createAccount(
+      birthYear: String!
       birthday: String!
       gender: String!
       cellphone: String!
@@ -13,8 +14,8 @@ export default gql`
       bio: String
       region: String!
       community: String!
-      age: Int!
-      kakaoId: Int!
+      age: String!
+      kakaoId: String!
     ): MutationResponse!
   }
 `;
