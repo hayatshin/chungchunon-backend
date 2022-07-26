@@ -8,16 +8,7 @@ export default {
   Mutation: {
     createAccount: async (
       _,
-      {
-        birthyear,
-        birthday,
-        gender,
-        cellphone,
-        name,
-        avatar,
-        age,
-        kakaoId,
-      }
+      { birthyear, birthday, gender, cellphone, name, avatar, age, kakaoId }
     ) => {
       try {
         // 핸드폰 번호 DB에 있는지 확인
@@ -53,7 +44,7 @@ export default {
             //   connect: {
             //     communityName: community,
             //   },
-            },
+            // },
             age,
           },
         });
