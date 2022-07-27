@@ -14,11 +14,12 @@ export default {
           error: "잘못된 이메일 주소입니다.",
         };
       }
+      const uglyPassword = await bcrypt.hash(password, 10);
       const passwordOk = await bcrypt.compare(password, user.password);
       if (!passwordOk) {
         return {
           ok: false,
-          error: "잘못된 비밀번호입니다.",
+          error: uglyPassword,
         };
       }
       // token 발행
