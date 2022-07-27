@@ -19,7 +19,7 @@ export default {
       if (!passwordOk) {
         return {
           ok: false,
-          error: uglyPassword,
+          error: "잘못된 비밀번호입니다.",
         };
       }
       // token 발행
