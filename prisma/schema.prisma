@@ -40,6 +40,7 @@ model User {
   poems Poem[]
   poemLikes Poemlike[]
   poemComments Poemcomment[]
+  master Boolean?
 }
 
 model Feed {

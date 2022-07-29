@@ -35,5 +35,6 @@ export default gql`
     lastweekPoemNumber: Int!
     #
     age: String!
+    master: Boolean
   }
 `;
