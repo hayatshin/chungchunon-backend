@@ -15,12 +15,20 @@ export default gql`
     createdAt: String!
     updatedAt: String!
     community: Community
+    # total
+    totalPointNumber: Int!
+    totalLikeNumber: Int!
+    totalCommentNumber: Int!
+    totalFeedNumber: Int!
+    totalPoemNumber: Int!
     # thisweek
+    thisweekPointNumber: Int!
     thisweekLikeNumber: Int!
     thisweekCommentNumber: Int!
     thisweekFeedNumber: Int!
     thisweekPoemNumber: Int!
     # thisweek
+    lastweekPointNumber: Int!
     lastweekLikeNumber: Int!
     lastweekCommentNumber: Int!
     lastweekFeedNumber: Int!
