@@ -7,4 +7,14 @@ export default gql`
     password: String!
     admincommunity: String!
   }
+
+  type Feedpoemlike {
+    id: String!
+    createdAt: String!
+  }
+
+  type Feedpoemcomment {
+    id: String!
+    createdAt: String!
+  }
 `;
