@@ -285,6 +285,27 @@ export default {
           ],
         },
       }),
+    thisweekStepNumber: async ({ id }) => {
+      const steps = await client.pedometer.aggregate({
+        _sum: {
+          stepCount: true,
+        },
+        where: {
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: thisweekStart,
+                lte: today,
+              },
+            },
+          ],
+        },
+      })
+      return steps._sum.stepCount || 0
+    },
     lastweekPointNumber: async ({ id }) => {
       const feedLikeNumber = await client.like.count({
         where: {
@@ -481,5 +502,26 @@ export default {
           ],
         },
       }),
+    lastweekStepNumber: async ({ id }) => {
+      const steps = await client.pedometer.aggregate({
+        _sum: {
+          stepCount: true,
+        },
+        where: {
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: lastweekStart,
+                lte: lastweekEnd,
+              },
+            },
+          ],
+        },
+      })
+      return steps._sum.stepCount || 0
+    },
   },
 };

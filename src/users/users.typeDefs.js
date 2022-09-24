@@ -27,12 +27,14 @@ export default gql`
     thisweekCommentNumber: Int!
     thisweekFeedNumber: Int!
     thisweekPoemNumber: Int!
+    thisweekStepNumber: Int!
     # thisweek
     lastweekPointNumber: Int!
     lastweekLikeNumber: Int!
     lastweekCommentNumber: Int!
     lastweekFeedNumber: Int!
     lastweekPoemNumber: Int!
+    lastweekStepNumber: Int!
     #
     age: String!
     master: Boolean
