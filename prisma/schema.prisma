@@ -36,6 +36,7 @@ model User {
   feeds Feed[]
   likes Like[]
   comments Comment[]
+  pedometers Pedometer[]
   age String
   poems Poem[]
   poemLikes Poemlike[]
@@ -83,6 +84,15 @@ model Community {
   user User[] 
   communityName String @unique
   communityLogo String
+}
+
+model Pedometer {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+  stepCount Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Poem {
