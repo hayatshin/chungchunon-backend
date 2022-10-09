@@ -180,12 +180,30 @@ export default {
           ],
         },
       });
+      const stepNumber = await client.pedometer.aggregate({
+        _sum: {
+          stepCount: true,
+        },
+        where: {
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: thisweekStart,
+                lte: today,
+              },
+            },
+          ],
+        },
+      });
       return (
         (parseInt(feedLikeNumber) + parseInt(poemLikeNumber)) * 1 +
         (parseInt(feedCommentNumber) + parseInt(poemCommentNumber)) * 2 +
         parseInt(poemNumber) * 10 +
         parseInt(feedNumber) * 10 +
-        Math.floor(thisweekStepNumber / 1000) * 1
+        Math.floor(stepNumber / 1000) * 1
       );
     },
     thisweekLikeNumber: async ({ id }) => {
@@ -398,12 +416,30 @@ export default {
           ],
         },
       });
+      const stepNumber = await client.pedometer.aggregate({
+        _sum: {
+          stepCount: true,
+        },
+        where: {
+          AND: [
+            {
+              userId: id,
+            },
+            {
+              createdAt: {
+                gte: lastweekStart,
+                lte: lastweekEnd,
+              },
+            },
+          ],
+        },
+      });
       return (
         (parseInt(feedLikeNumber) + parseInt(poemLikeNumber)) * 1 +
         (parseInt(feedCommentNumber) + parseInt(poemCommentNumber)) * 2 +
         parseInt(poemNumber) * 10 +
         parseInt(feedNumber) * 10 +
-        Math.floor(lastweekStepNumber / 1000) * 1
+        Math.floor(stepNumber / 1000) * 1
       );
     },
     lastweekLikeNumber: async ({ id }) => {
