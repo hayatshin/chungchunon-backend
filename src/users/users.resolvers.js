@@ -203,7 +203,7 @@ export default {
         (parseInt(feedCommentNumber) + parseInt(poemCommentNumber)) * 2 +
         parseInt(poemNumber) * 10 +
         parseInt(feedNumber) * 10 +
-        Math.floor(stepNumber / 1000) * 1
+        Math.floor(stepNumber._sum.stepCount / 1000) * 1
       );
     },
     thisweekLikeNumber: async ({ id }) => {
@@ -439,7 +439,7 @@ export default {
         (parseInt(feedCommentNumber) + parseInt(poemCommentNumber)) * 2 +
         parseInt(poemNumber) * 10 +
         parseInt(feedNumber) * 10 +
-        Math.floor(stepNumber / 1000) * 1
+        Math.floor(stepNumber._sum.stepCount / 1000) * 1
       );
     },
     lastweekLikeNumber: async ({ id }) => {
