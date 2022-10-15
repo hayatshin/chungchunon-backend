@@ -21,6 +21,7 @@ export default gql`
     totalCommentNumber: Int!
     totalFeedNumber: Int!
     totalPoemNumber: Int!
+    totalStepNumber: Int!
     # thisweek
     thisweekPointNumber: Int!
     thisweekLikeNumber: Int!

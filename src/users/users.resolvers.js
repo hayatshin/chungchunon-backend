@@ -89,6 +89,17 @@ export default {
           userId: id,
         },
       }),
+    totalStepNumber: async ({ id }) => {
+      const steps = await client.pedometer.aggregate({
+        _sum: {
+          stepCount: true,
+        },
+        where: {
+          userId: id,
+        },
+      });
+      return steps._sum.stepCount || 0;
+    },
     thisweekPointNumber: async ({ id }) => {
       const feedLikeNumber = await client.like.count({
         where: {
