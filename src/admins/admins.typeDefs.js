@@ -10,11 +10,13 @@ export default gql`
 
   type Feedpoemlike {
     id: String!
+    user: User!
     createdAt: String!
   }
 
   type Feedpoemcomment {
     id: String!
+    user: User!
     createdAt: String!
   }
 `;
